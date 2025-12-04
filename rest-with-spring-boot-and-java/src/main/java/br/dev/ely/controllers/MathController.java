@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/math")
 public class MathController {
 
-    // http://localhost:8080/match/sum/2/2
+    // http://localhost:8080/math/sum/2/2
     @RequestMapping ("/sum/{numberOne}/{numberTwo}")
     public Double sum (
             @PathVariable("numberOne") String numberOne,
@@ -19,7 +19,7 @@ public class MathController {
         return convertoToDouble(numberOne) + convertoToDouble(numberTwo);
     }
 
-    //http://localhost:8080/match/subtraction/3/5
+    //http://localhost:8080/math/subtraction/3/5
     @RequestMapping ("/subtraction/{numberOne}/{numberTwo}")
     public Double subtraction (
             @PathVariable("numberOne") String numberOne,
@@ -28,6 +28,47 @@ public class MathController {
         if(!isNumeric(numberOne) || !isNumeric(numberTwo)) throw new unsupportedMathOperationException("Please set a numeric value!");
         return convertoToDouble(numberOne) - convertoToDouble(numberTwo);
     }
+
+    //http://localhost:8080/math/multiplication/3/5
+    @RequestMapping ("/multiplication/{numberOne}/{numberTwo}")
+    public Double multiplication (
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo
+    )throws Exception {
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo)) throw new unsupportedMathOperationException("Please set a numeric value!");
+        return convertoToDouble(numberOne) * convertoToDouble(numberTwo);
+    }
+
+    //http://localhost:8080/math/division/3/5
+    @RequestMapping ("/division/{numberOne}/{numberTwo}")
+    public Double division (
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo
+    )throws Exception {
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo)) throw new unsupportedMathOperationException("Please set a numeric value!");
+        return convertoToDouble(numberOne) / convertoToDouble(numberTwo);
+    }
+
+    //http://localhost:8080/math/mean/3/5
+    @RequestMapping ("/mean/{numberOne}/{numberTwo}")
+    public Double mean (
+            @PathVariable("numberOne") String numberOne,
+            @PathVariable("numberTwo") String numberTwo
+    )throws Exception {
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo)) throw new unsupportedMathOperationException("Please set a numeric value!");
+        return (convertoToDouble(numberOne) + convertoToDouble(numberTwo)) /2;
+    }
+
+    //http://localhost:8080/math/squareRoot/3/5
+    @RequestMapping ("/squareRoot/{numberOne}")
+    public Double squareRoot (
+            @PathVariable("numberOne") String numberOne
+    )throws Exception {
+        if(!isNumeric(numberOne)) throw new unsupportedMathOperationException("Please set a numeric value!");
+        return Math.sqrt(convertoToDouble(numberOne));
+    }
+
+
 
     private Double convertoToDouble(String strNumber) {
         if (strNumber == null || strNumber.isEmpty()) throw new unsupportedMathOperationException("Please set a numeric value!");
