@@ -6,27 +6,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class simpleMath {
 
-    public Double sum (String numberOne,String numberTwo)
+    public Double sum (Double numberOne,Double numberTwo){
         return numberOne + numberTwo;
     }
 
-    public Double subtraction (String numberOne,String numberTwo)
+    public Double subtraction (Double numberOne,Double numberTwo){
         return numberOne - numberTwo;
     }
 
-    public Double multiplication (String numberOne,String numberTwo)
+    public Double multiplication (Double numberOne,Double numberTwo){
         return numberOne * numberTwo;
     }
 
-    public Double division (String numberOne,String numberTwo)
+    public Double division (Double numberOne,Double numberTwo){
         return numberOne / numberTwo;
     }
 
-    public Double mean (String numberOne,String numberTwo)
+    public Double mean (Double numberOne,Double numberTwo) {
         return numberOne + numberTwo / 2;
     }
 
-    public Double squareRoot (String numberOne,String numberTwo)
-        return Math.sqrt(numberOne);
+    public Double squareRoot (Double number) {
+        return Math.sqrt(number);
     }
 }
