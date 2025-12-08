@@ -1,6 +1,8 @@
 package br.dev.ely.controllers;
+package br.dev.ely.math;
 
 import br.dev.ely.exceotion.unsupportedMathOperationException;
+import br.dev.ely.math.SimpleMath;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping ("/math")
 public class MathController {
 
-    private SimpleMath math = new simpleMath();
+    private SimpleMath math = new SimpleMath();
 
     // http://localhost:8080/math/sum/2/2
     @RequestMapping ("/sum/{numberOne}/{numberTwo}")
