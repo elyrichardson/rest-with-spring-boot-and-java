@@ -1,4 +1,4 @@
-package br.dev.ely.exceotion;
+package br.dev.ely.exceptions;
 
 import java.util.Date;
 

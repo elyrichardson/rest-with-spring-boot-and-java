@@ -1,11 +1,11 @@
 package br.dev.ely.converters;
 
-import br.dev.ely.exceotion.unsupportedMathOperationException;
+import br.dev.ely.exceptions.UnsupportedMathOperationException;
 
-public class numberConverter {
+public class NumberConverter {
 
     public static Double convertoToDouble(String strNumber) {
-        if (strNumber == null || strNumber.isEmpty()) throw new unsupportedMathOperationException("Please set a numeric value!");
+        if (strNumber == null || strNumber.isEmpty()) throw new UnsupportedMathOperationException("Please set a numeric value!");
         String number = strNumber.replace(",", ".");
         return Double.parseDouble(number);
     }

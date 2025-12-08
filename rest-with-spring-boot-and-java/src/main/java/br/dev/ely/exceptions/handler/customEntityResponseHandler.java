@@ -1,7 +1,7 @@
-package br.dev.ely.exceotion.handler;
+package br.dev.ely.exceptions.handler;
 
-import br.dev.ely.exceotion.ExceptionResponse;
-import br.dev.ely.exceotion.unsupportedMathOperationException;
+import br.dev.ely.exceptions.ExceptionResponse;
+import br.dev.ely.exceptions.UnsupportedMathOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -26,7 +26,7 @@ public class customEntityResponseHandler extends ResponseEntityExceptionHandler 
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(unsupportedMathOperationException.class)
+    @ExceptionHandler(UnsupportedMathOperationException.class)
     public final ResponseEntity<ExceptionResponse> handleBadRequestException(Exception ex, WebRequest request) {
         ExceptionResponse response = new ExceptionResponse(
                 new Date(),
